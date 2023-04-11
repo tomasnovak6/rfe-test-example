@@ -1,0 +1,61 @@
+$color-white: #ffffff;
+$color-grey: #aaaaaa;
+$color-dark: #282c34;
+$color-red: #dd0000;
+
+.App {
+  text-align: center;
+
+  .App-header {
+    background-color: $color-dark;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: $color-white;
+  }
+
+  .example {
+    margin: 1rem auto;
+    padding: 1rem 0;
+
+    .h2-headline {
+      border-bottom: 1px solid $color-grey;
+    }
+
+    .list-group {
+      padding: 1rem 0;
+
+      .list-group-item {
+        .list-item-span {
+          display: inline-block;
+          min-width: 20rem;
+        }
+      }
+    }
+
+    .form {
+      .form-group {
+        padding: 1rem 0;
+
+        label {
+          text-align: right;
+          display: block;
+          height: 100%;
+          line-height: 38px;
+        }
+
+        .error-message {
+          font-weight: bold;
+          color: $color-red;
+        }
+      }
+
+      .btn-primary {
+        width: 100%;
+      }
+    }
+  }
+
+}

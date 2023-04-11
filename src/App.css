@@ -1,38 +1,44 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+.App .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #ffffff;
+}
+.App .example {
+  margin: 1rem auto;
+  padding: 1rem 0;
+}
+.App .example .h2-headline {
+  border-bottom: 1px solid #aaaaaa;
+}
+.App .example .list-group {
+  padding: 1rem 0;
+}
+.App .example .list-group .list-group-item .list-item-span {
+  display: inline-block;
+  min-width: 20rem;
+}
+.App .example .form .form-group {
+  padding: 1rem 0;
+}
+.App .example .form .form-group label {
+  text-align: right;
+  display: block;
+  height: 100%;
+  line-height: 38px;
+}
+.App .example .form .form-group .error-message {
+  font-weight: bold;
+  color: #dd0000;
+}
+.App .example .form .btn-primary {
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/*# sourceMappingURL=App.css.map */
