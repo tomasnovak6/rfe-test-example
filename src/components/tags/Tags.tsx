@@ -1,8 +1,10 @@
 import React from 'react';
 import { useEffect , useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { Counter} from "../counter/Counter";
+import {Duplicates} from "../duplicates/Duplicates";
 
-function Tags(props: {example: number}) {
+export default function Tags(props: {example: number}) {
     const location = useLocation();
     const [tagsArr, setTagsArr] = useState(['']);
     const [formState, setFormState] = useState({
@@ -12,7 +14,7 @@ function Tags(props: {example: number}) {
     const [errorMessage, setErrorMessage] = useState('');
 
     useEffect(()=> {
-        const setTags = () => {
+        const setTags = (): void => {
             let tags: string = '';
 
             if (location && location.hash) {
@@ -23,7 +25,7 @@ function Tags(props: {example: number}) {
         setTags();
     }, [location]);
 
-    const handleInputChange = (event: any) => {
+    const handleInputChange = (event: any): void => {
         const { name, value } = event.target;
         setFormState((prevProps) => ({
            ...prevProps,
@@ -31,7 +33,7 @@ function Tags(props: {example: number}) {
         }));
     }
 
-    const handleSubmit = (event: any) => {
+    const handleSubmit = (event: any): void => {
         event.preventDefault();
 
         if (formState && validateColor(formState.color)) {
@@ -60,7 +62,7 @@ function Tags(props: {example: number}) {
         return result;
     }
 
-    const addTag = (color: string) => {
+    const addTag = (color: string): void => {
         const tagsString: string = tagsArr.join();
         let comma: string = '';
 
@@ -72,7 +74,7 @@ function Tags(props: {example: number}) {
         setErrorMessage('');
     }
 
-    const removeTag = (color: string) => {
+    const removeTag = (color: string): void => {
         let confirm: boolean = window.confirm('Are you sure you want to remove this color?');
         if (confirm) {
             let newTags: string = location.hash.replace(',' + color, '').replace(color + ',', '').replace(color, '');
@@ -86,6 +88,11 @@ function Tags(props: {example: number}) {
             <div className="row h2-headline">
                 <h2>Component example #{props.example}</h2>
             </div>
+
+            <Counter />
+
+            <Duplicates />
+
             {tagsArr && tagsArr.length > 0 && tagsArr[0] !== '' &&
             <div className="row">
                 <ul className="list-group">
@@ -130,5 +137,3 @@ function Tags(props: {example: number}) {
         </div>
     )
 }
-
-export default Tags

@@ -9,8 +9,6 @@ function App() {
               <h1>RFE Test Example</h1>
           </header>
           <Tags example={1} />
-          <Tags example={2} />
-          <Tags example={3} />
       </div>
   );
 }
