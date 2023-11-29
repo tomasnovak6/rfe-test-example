@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {CounterInterface, CounterPayload} from "./counterInterface";
+import { CounterInterface } from './counterInterface';
 
 export const counterSlice = createSlice({
     name: 'counter',
     initialState: {
-        value: 0,
+        value: 1,
     },
     reducers: {
         increment: (state: CounterInterface): void => {
@@ -14,14 +14,11 @@ export const counterSlice = createSlice({
             state.value--
         },
         reset: (state: CounterInterface): void => {
-            state.value = 0;
-        },
-        incrementByAmount: (state: CounterInterface, action: CounterPayload): void => {
-            state.value += action.payload
+            state.value = 1;
         },
     },
 })
 
-export const { increment, decrement, reset, incrementByAmount } = counterSlice.actions
+export const { increment, decrement, reset } = counterSlice.actions
 
 export default counterSlice.reducer

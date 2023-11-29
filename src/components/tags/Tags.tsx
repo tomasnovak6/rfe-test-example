@@ -1,8 +1,6 @@
 import React from 'react';
 import { useEffect , useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Counter} from "../counter/Counter";
-import {Duplicates} from "../duplicates/Duplicates";
 
 export default function Tags(props: {example: number}) {
     const location = useLocation();
@@ -88,10 +86,6 @@ export default function Tags(props: {example: number}) {
             <div className="row h2-headline">
                 <h2>Component example #{props.example}</h2>
             </div>
-
-            <Counter />
-
-            <Duplicates />
 
             {tagsArr && tagsArr.length > 0 && tagsArr[0] !== '' &&
             <div className="row">

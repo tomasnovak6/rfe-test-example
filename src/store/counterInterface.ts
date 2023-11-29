@@ -2,7 +2,6 @@ export interface CounterInterface {
     value: number;
 }
 
-export interface CounterPayload {
-    payload: any;
-    type: string;
+export interface StateInterface {
+    counter: CounterInterface;
 }
